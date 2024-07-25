@@ -3,12 +3,15 @@ namespace RefactorThis.Persistence {
 	{
 		private Invoice _invoice;
 
-		public Invoice GetInvoice( string reference )
+		public Invoice GetInvoice(string reference)
 		{
+			if (string.IsNullOrEmpty(reference))
+				return null;
+
 			return _invoice;
 		}
 
-		public void SaveInvoice( Invoice invoice )
+		public void SaveInvoice(Invoice invoice)
 		{
 			//saves the invoice to the database
 		}
